@@ -82,7 +82,7 @@ export default {
         padding: 2vw;
         margin: 2vw;
         height: 15vw;
-        width: 75%;
+        width: 65%;
     }
 
 </style>
