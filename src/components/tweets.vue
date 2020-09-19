@@ -1,8 +1,8 @@
 <template>
     <div class="tweets-container">
         <h1>TWEETS!</h1>
-        <button id="change-view" @click="grid= !grid">Change View</button>
-        <div id="grid" :class="{listView: grid}">
+        <button id="change-view" @click="grid =! grid">Change View</button>
+        <div id="grid" :class="{ grid: grid }">
             <div id="tweet-area" v-for="tweet in tweets" v-bind:key="tweet"> 
                 <h3>{{ tweet.content }}</h3>
                 <p>{{ " Posted By: " + tweet.name }}</p>
@@ -52,18 +52,18 @@ export default {
 
 <style scoped>
 
-    #grid {
+    #listView {
         display: grid;
         justify-items: center;
         align-items: center;
-        grid-template-rows: repeat(5, 1fr);
-        margin: 2vw;
+        grid-template-rows: repeat(auto-fit, minmax(200px, 1fr));
     }
-    .listView {
+    .grid {
         display: grid;
         justify-items: center;
         align-items: center;
-        grid-template-columns: repeat(5, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        overflow-wrap: break-word
     }
 
     button {
@@ -82,7 +82,6 @@ export default {
         padding: 2vw;
         margin: 2vw;
         height: 15vw;
-        width: 65%;
     }
 
 </style>
